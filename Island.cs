@@ -90,5 +90,11 @@ namespace Rabits_Island
         {
 
         }
+
+
+        public Cell this[int x, int y]
+        {
+            get { return null; }
+        }
     }
 }
