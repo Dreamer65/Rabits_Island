@@ -56,11 +56,11 @@ namespace Rabits_Island
     }
     class Cell
     {
-        public Cell(Point location, List<Cell> neighbors)
+        public Cell(Point location)
         {
             Location = location;
             Animals = new List<IAnimal>();
-            Neighbors = neighbors;
+            Neighbors = new List<Cell>();
         }
 
         public Point Location { get; }
@@ -68,6 +68,11 @@ namespace Rabits_Island
         public List<Cell> Neighbors;
 
         public List<IAnimal> Animals { get; }
+
+        public bool IsEmpty
+        {
+            get { return Animals.Count == 0; }
+        }
         public void AddAnimal(IAnimal animal)
         {
             Animals.Add(animal);
